@@ -35,19 +35,19 @@ export default {
     "@nuxtjs/sitemap",
 
     // https://github.com/nuxt-community/sentry-module
-    "@nuxtjs/sentry",
+    // "@nuxtjs/sentry",
 
     // https://github.com/Developmint/nuxt-webfontloader
-    "nuxt-webfontloader",
+    "nuxt-webfontloader"
 
     // https://github.com/nuxt-community/analytics-module
-    [
-      "@nuxtjs/google-analytics",
-      {
-        // TODO: Change this id to your Google Analytics ID
-        id: process.env.GOOGLE_ANALYTICS
-      }
-    ]
+    // [
+    //   "@nuxtjs/google-analytics",
+    //   {
+    //     // TODO: Change this id to your Google Analytics ID
+    //     id: process.env.GOOGLE_ANALYTICS
+    //   }
+    // ]
   ],
 
   webfontloader: {
@@ -63,7 +63,9 @@ export default {
   css: ["~/assets/styles/vuetify.styl"],
 
   // https://nuxtjs.org/api/configuration-watch
-  watch: ["~/vuex/**/*.js"],
+  watch: ["~/vuex/**/*.js", "~/server/**/*.js"],
+
+  serverMiddleware: ["~/server/index"],
 
   // https://nuxtjs.org/api/configuration-build
   build: {
