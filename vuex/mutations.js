@@ -1,8 +1,10 @@
 import types from "./mutation-types";
 
 export default {
-  [types.SET_EXAMPLE_STATE]: (state, payload) => {
-    state.exampleState = payload;
+  [types.SET_NOTIF]: (state, { text, color }) => {
+    state.notif = {
+      text,
+      color
+    };
   }
-  // TODO: Add mutations
 };

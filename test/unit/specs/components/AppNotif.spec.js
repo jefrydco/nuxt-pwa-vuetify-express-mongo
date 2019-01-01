@@ -5,7 +5,7 @@ import VeeValidate from "vee-validate";
 import moment from "moment";
 import axios from "axios";
 
-import Index from "~/pages/index";
+import AppNotif from "~/components/AppNotif";
 
 import createRepo from "~/helpers/api";
 import vuex from "~/vuex";
@@ -20,7 +20,7 @@ localVue.use(Vuex);
 localVue.use(Vuetify);
 localVue.use(VeeValidate);
 
-describe("Index page", () => {
+describe("AppNotif component", () => {
   let store;
 
   beforeAll(() => {
@@ -30,7 +30,7 @@ describe("Index page", () => {
   });
 
   it("renders to match snapshot", () => {
-    const wrapper = shallowMount(Index, {
+    const wrapper = shallowMount(AppNotif, {
       localVue,
       store,
       mocks: {

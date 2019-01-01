@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppNotif component renders to match snapshot 1`] = `
+<v-snackbar-stub timeout="6000" right="">
+
+  <v-btn-stub activeclass="v-btn--active" flat="true" tag="button" type="button" dark=""> Close </v-btn-stub>
+</v-snackbar-stub>
+`;

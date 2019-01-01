@@ -7,11 +7,17 @@
         </v-layout>
       </v-container>
     </v-content>
+    <app-notif />
   </v-app>
 </template>
 
 <script>
+import AppNotif from "~/components/AppNotif";
+
 export default {
+  components: {
+    AppNotif
+  },
   data() {
     return {};
   }

@@ -1,4 +1,3 @@
 export default {
-  exampleGetters: state => state.exampleState
-  // TODO: Add getters
+  isNotif: state => state.notif.text !== null && state.notif.color !== null
 };

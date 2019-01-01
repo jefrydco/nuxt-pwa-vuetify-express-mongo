@@ -3,8 +3,10 @@ import mutations from "./mutations";
 import actions from "./actions";
 
 const state = () => ({
-  exampleState: null
-  // TODO: Add state
+  notif: {
+    text: null,
+    color: null
+  }
 });
 
 export default {

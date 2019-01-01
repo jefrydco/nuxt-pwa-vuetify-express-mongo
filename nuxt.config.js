@@ -34,6 +34,9 @@ export default {
     // https://github.com/nuxt-community/sitemap-module
     "@nuxtjs/sitemap",
 
+    // https://github.com/nuxt-community/moment-module
+    "@nuxtjs/moment",
+
     // https://github.com/nuxt-community/sentry-module
     // "@nuxtjs/sentry",
 
@@ -47,8 +50,12 @@ export default {
     //     // TODO: Change this id to your Google Analytics ID
     //     id: process.env.GOOGLE_ANALYTICS
     //   }
-    // ]
+    // ],
   ],
+
+  axios: {
+    baseURL: "http://localhost:3000/api"
+  },
 
   webfontloader: {
     google: {
@@ -57,13 +64,19 @@ export default {
   },
 
   // https://nuxtjs.org/api/configuration-plugins
-  plugins: ["~/plugins/vuetify", "~/plugins/vee-validate"],
+  plugins: [
+    "~/plugins/api",
+    "~/plugins/component",
+    "~/plugins/vuetify",
+    "~/plugins/vee-validate",
+    "~/plugins/vue-logger"
+  ],
 
   // https://nuxtjs.org/api/configuration-css
   css: ["~/assets/styles/vuetify.styl"],
 
   // https://nuxtjs.org/api/configuration-watch
-  watch: ["~/vuex/**/*.js", "~/server/**/*.js"],
+  watch: ["~/vuex/**/*.js", "~/server/**/*.js", "~/mixins/**/*.js"],
 
   serverMiddleware: ["~/server/index"],
 

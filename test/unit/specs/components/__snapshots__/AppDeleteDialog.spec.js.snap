@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppDeleteDialog component renders to match snapshot 1`] = `
+<v-dialog-stub maxwidth="none" origin="center center" width="500" transition="dialog-transition" value="true"><template></template>
+  <v-card-stub tag="div">
+    <v-card-text-stub>
+      <v-container-stub tag="div" fluid="" grid-list-xl="">
+        <v-layout-stub tag="div" row="" wrap="">
+          <v-flex-stub tag="div" xs12="">
+            Are you sure you want to permanently delete "<strong>Stub</strong>"?
+          </v-flex-stub>
+        </v-layout-stub>
+      </v-container-stub>
+    </v-card-text-stub>
+    <v-divider-stub></v-divider-stub>
+    <v-card-actions-stub>
+      <v-spacer-stub></v-spacer-stub>
+      <v-btn-stub activeclass="v-btn--active" outline="true" tag="button" type="button" color="grey" class="btn__delete_dialog--cancel">
+        Cancel
+      </v-btn-stub>
+      <v-btn-stub activeclass="v-btn--active" tag="button" type="button" color="error" class="btn__delete_dialog--delete">
+        Delete
+      </v-btn-stub>
+    </v-card-actions-stub>
+  </v-card-stub>
+</v-dialog-stub>
+`;

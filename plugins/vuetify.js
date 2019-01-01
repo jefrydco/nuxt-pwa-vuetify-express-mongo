@@ -1,7 +1,7 @@
 import LRU from "lru-cache";
 import Vue from "vue";
 import Vuetify from "vuetify/lib";
-import { Ripple } from "vuetify/lib/directives";
+import colors from "vuetify/es5/util/colors";
 
 import "@mdi/font/css/materialdesignicons.css";
 
@@ -17,7 +17,8 @@ Vue.use(Vuetify, {
     }),
     cspNonce: "dQw4w9WgXcQ"
   },
-  directives: {
-    Ripple
+  theme: {
+    primary: colors.lightBlue,
+    accent: colors.pink.accent1
   }
 });

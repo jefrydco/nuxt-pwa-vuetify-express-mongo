@@ -8,6 +8,7 @@ const response = {
 
 const index = (req, res) => {
   return Product.find()
+    .sort({ createdAt: -1 })
     .lean()
     .then(collection =>
       res.json({
@@ -18,7 +19,16 @@ const index = (req, res) => {
 };
 
 const store = (req, res) => {
-  return Product.create(req.body).then(() =>
+  const creationDate = new Date();
+  const data = {
+    name: req.body.name,
+    quantity: req.body.quantity,
+    price: req.body.price,
+    expirationDate: req.body.expirationDate,
+    createdAt: creationDate,
+    updatedAt: creationDate
+  };
+  return Product.create(data).then(() =>
     res.json({
       ...response,
       message: "saved"
@@ -38,18 +48,32 @@ const show = (req, res) => {
 };
 
 const update = (req, res) => {
-  return Product.findByIdAndUpdate(req.params.id, req.body, { new: true }).then(
-    collection =>
+  const data = {
+    name: req.body.name,
+    quantity: req.body.quantity,
+    price: req.body.price,
+    expirationDate: req.body.expirationDate,
+    updatedAt: new Date(),
+    $setOnInsert: {
+      createdAt: new Date()
+    }
+  };
+  return Product.findByIdAndUpdate(req.params.id, data, {
+    new: true,
+    upsert: true
+  })
+    .lean()
+    .then(collection =>
       res.json({
         ...response,
         message: "updated",
         data: collection
       })
-  );
+    );
 };
 
 const remove = (req, res) => {
-  return Product.findOneAndDelete({ _id: req.params.id })
+  return Product.findByIdAndDelete(req.params.id)
     .lean()
     .then(collection =>
       res.json({

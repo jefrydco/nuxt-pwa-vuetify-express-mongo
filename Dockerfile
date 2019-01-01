@@ -4,8 +4,10 @@ WORKDIR /app
 
 ADD . .
 
+ENV PORT 5000
+
 RUN npm install
 RUN npm run build
 
-EXPOSE 3000
+EXPOSE 5000
 CMD [ "npm", "start" ]
