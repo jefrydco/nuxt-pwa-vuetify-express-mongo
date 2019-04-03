@@ -8,8 +8,12 @@ export default {
 
   // https://nuxtjs.org/api/configuration-head
   head: {
-    titleTemplate: title =>
-      title ? `${title} - Nuxt PWA Vuetify` : "Nuxt PWA Vuetify",
+    titleTemplate(title) {
+      if (title) {
+        return `${title} - Nuxt PWA Vuetify`;
+      }
+      return "Nuxt PWA Vuetify";
+    },
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -68,17 +72,16 @@ export default {
     "~/plugins/api",
     "~/plugins/component",
     "~/plugins/vuetify",
-    "~/plugins/vee-validate",
-    "~/plugins/vue-logger"
+    "~/plugins/vee-validate"
   ],
 
   // https://nuxtjs.org/api/configuration-css
-  css: ["~/assets/styles/vuetify.styl"],
+  css: ["~/assets/styles/vuetify"],
 
   // https://nuxtjs.org/api/configuration-watch
-  watch: ["~/vuex/**/*.js", "~/server/**/*.js", "~/mixins/**/*.js"],
+  watch: ["~/server/**/*.js", "~/mixins/**/*.js"],
 
-  serverMiddleware: ["~/server/index"],
+  serverMiddleware: ["~/server"],
 
   // https://nuxtjs.org/api/configuration-build
   build: {
