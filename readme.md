@@ -32,9 +32,15 @@ $ yarn # Or npm install
 # serve with hot reload at localhost:3000
 $ yarn dev
 
+# or if you want to start development server it using docker
+$ docker-compose -f local.yml up
+
 # build for production and launch server
 $ yarn build
 $ yarn start
+
+# or if you want to start production server it using docker
+$ docker-compose -f production.yml up
 
 # generate static project
 $ yarn generate
