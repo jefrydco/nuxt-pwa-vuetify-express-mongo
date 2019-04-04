@@ -1,4 +1,4 @@
-import types from "~/vuex/mutation-types";
+import { types } from "~/store";
 
 export default {
   computed: {

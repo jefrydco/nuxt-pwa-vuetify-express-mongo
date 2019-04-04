@@ -7,8 +7,10 @@ import products from "./routes/products";
 
 const app = express();
 mongoose.connect(
-  "mongodb://139.180.128.53:27017/edy",
-  { useNewUrlParser: true }
+  "mongodb://admin:admin@mongo:27017/bandingin?authSource=admin",
+  {
+    useNewUrlParser: true
+  }
 );
 
 app.use(bodyParser.json());

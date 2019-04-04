@@ -78,18 +78,14 @@
             width="290px"
           >
             <v-text-field
-              v-validate="'required|date_format:MM/DD/YYYY'"
               slot="activator"
               :disabled="isLoading"
-              :error-messages="errors.collect('expirationDate')"
               v-model="formatedExpirationDate"
               clearable=""
               name="expirationDate"
               label="Expiration Date"
               box=""
               required=""
-              data-vv-as="Expiration Date"
-              data-vv-name="expirationDate"
               readonly=""
             />
             <v-date-picker v-model="product.expirationDate" scrollable>

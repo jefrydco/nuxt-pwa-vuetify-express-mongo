@@ -81,7 +81,7 @@ export default {
   // https://nuxtjs.org/api/configuration-watch
   watch: ["~/server/**/*.js", "~/mixins/**/*.js"],
 
-  serverMiddleware: ["~/server"],
+  serverMiddleware: ["~/server/index"],
 
   // https://nuxtjs.org/api/configuration-build
   build: {
