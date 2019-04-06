@@ -6,9 +6,21 @@ import moment from "moment";
 import axios from "axios";
 
 import Index from "~/pages/index";
+import AppDeleteDialog from "~/components/AppDeleteDialog";
 
 import createRepo from "~/helpers/api";
-import vuex from "~/vuex";
+import vuex from "~/store";
+
+// https://github.com/vuetifyjs/vuetify/issues/4068#issuecomment-446988490
+const logError = console.error;
+console.error = (...args) => {
+  if (
+    args[0].includes("[Vuetify]") &&
+    args[0].includes("https://github.com/vuetifyjs/vuetify/issues/4068")
+  )
+    return;
+  logError(...args);
+};
 
 const localVue = createLocalVue();
 const createApi = createRepo(axios);
@@ -36,6 +48,9 @@ describe("Index page", () => {
       mocks: {
         $moment: moment,
         $api: apiList
+      },
+      components: {
+        AppDeleteDialog
       }
     });
     expect(wrapper).toMatchSnapshot();

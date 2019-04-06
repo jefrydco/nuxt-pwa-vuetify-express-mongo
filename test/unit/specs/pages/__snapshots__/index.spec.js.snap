@@ -4,28 +4,28 @@ exports[`Index page renders to match snapshot 1`] = `
 <v-layout-stub tag="div" row="" wrap="">
   <v-flex-stub tag="div" xs12="" md4="">
     <v-card-stub tag="div">
-      <v-toolbar-stub card="true" scrollthreshold="300" dark="" color="primary">
+      <v-toolbar-stub color="primary" dark="true" card="true" scrollthreshold="300">
         <v-toolbar-title-stub>Add Product</v-toolbar-title-stub>
         <v-spacer-stub></v-spacer-stub>
-        <v-btn-stub activeclass="v-btn--active" tag="button" type="button" color="white" light="">
+        <v-btn-stub color="white" activeclass="v-btn--active" tag="button" light="true" type="button">
           Clear
         </v-btn-stub>
-        <v-btn-stub activeclass="v-btn--active" tag="button" type="submit" color="accent">
+        <v-btn-stub color="accent" activeclass="v-btn--active" tag="button" type="submit">
           Add
         </v-btn-stub>
       </v-toolbar-stub>
       <v-card-text-stub>
-        <v-text-field-stub error-messages="" clearable="" label="Name" box="" required="" data-vv-as="Name" data-vv-name="name"></v-text-field-stub>
-        <v-text-field-stub error-messages="" clearable="" label="Quantity" box="" required="" min="0" data-vv-as="Quantity" data-vv-name="quantity" type="number"></v-text-field-stub>
-        <v-text-field-stub error-messages="" clearable="" label="Price" box="" required="" min="100" data-vv-as="Price" data-vv-name="price" type="number"></v-text-field-stub>
-        <v-dialog-stub persistent="true" fullwidth="true" maxwidth="none" origin="center center" width="290px" transition="dialog-transition" lazy="">
-          <v-text-field-stub error-messages="" clearable="" label="Expiration Date" box="" required="" data-vv-as="Expiration Date" data-vv-name="expirationDate" readonly=""></v-text-field-stub>
-          <v-date-picker-stub eventcolor="warning" firstdayofweek="0" locale="en-us" nexticon="$vuetify.icons.next" previcon="$vuetify.icons.prev" scrollable="true" showcurrent="true" type="date">
+        <v-text-field-stub error-messages="" clearable="" name="name" label="Name" box="" required="" data-vv-as="Name" data-vv-name="name"></v-text-field-stub>
+        <v-text-field-stub error-messages="" clearable="" name="quantity" label="Quantity" box="" required="" min="0" data-vv-as="Quantity" data-vv-name="quantity" type="number"></v-text-field-stub>
+        <v-text-field-stub error-messages="" clearable="" name="price" label="Price" box="" required="" min="100" data-vv-as="Price" data-vv-name="price" type="number"></v-text-field-stub>
+        <v-dialog-stub lazy="true" contentclass="" persistent="true" fullwidth="true" maxwidth="none" origin="center center" width="290px" transition="dialog-transition">
+          <v-text-field-stub clearable="" name="expirationDate" label="Expiration Date" box="" required="" readonly=""></v-text-field-stub>
+          <v-date-picker-stub width="290" eventcolor="warning" firstdayofweek="0" locale="en-us" nexticon="$vuetify.icons.next" previcon="$vuetify.icons.prev" scrollable="true" showcurrent="true" type="date">
             <v-spacer-stub></v-spacer-stub>
-            <v-btn-stub activeclass="v-btn--active" flat="true" tag="button" type="button" color="primary">
+            <v-btn-stub color="primary" activeclass="v-btn--active" tag="button" flat="true" type="button">
               Cancel
             </v-btn-stub>
-            <v-btn-stub activeclass="v-btn--active" flat="true" tag="button" type="button" color="primary">
+            <v-btn-stub color="primary" activeclass="v-btn--active" tag="button" flat="true" type="button">
               OK
             </v-btn-stub>
           </v-date-picker-stub>
@@ -35,13 +35,15 @@ exports[`Index page renders to match snapshot 1`] = `
   </v-flex-stub>
   <v-flex-stub tag="div" xs12="" md8="">
     <v-card-stub tag="div">
-      <v-toolbar-stub card="true" scrollthreshold="300" dark="" color="primary">
+      <v-toolbar-stub color="primary" dark="true" card="true" scrollthreshold="300">
         <v-toolbar-title-stub>Product List</v-toolbar-title-stub>
         <v-spacer-stub></v-spacer-stub>
-        <v-text-field-stub label="Search..." flat="" light="" solo="" hide-details=""></v-text-field-stub>
+        <v-text-field-stub label="Search..." name="search" clearable="" flat="" light="" solo="" hide-details=""></v-text-field-stub>
       </v-toolbar-stub>
       <v-card-text-stub>
-        <v-data-table-stub headers="[object Object],[object Object],[object Object],[object Object],[object Object]" headertext="text" rowsperpagetext="$vuetify.dataTable.rowsPerPageText" customfilter="function _default(items, search, filter, headers) {
+        <v-data-table-stub nodatatext="$vuetify.noDataText" noresultstext="$vuetify.dataIterator.noResultsText" nexticon="$vuetify.icons.next" previcon="$vuetify.icons.prev" rowsperpageitems="5,10,25,[object Object]" rowsperpagetext="$vuetify.dataTable.rowsPerPageText" filter="function _default(val, search) {
+                return val != null &amp;&amp; typeof val !== 'boolean' &amp;&amp; val.toString().toLowerCase().indexOf(search) !== -1;
+            }" customfilter="function _default(items, search, filter, headers) {
                 search = search.toString().toLowerCase();
                 if (search.trim() === '') return items;
                 var props = headers.map(function (h) {
@@ -52,7 +54,32 @@ exports[`Index page renders to match snapshot 1`] = `
                         return filter(Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__[&quot;getObjectValueByPath&quot;])(item, prop, item[prop]), search);
                     });
                 });
-            }" items="" item-key="_id"></v-data-table-stub>
+            }" customsort="function _default(items, index, isDescending) {
+                if (index === null) return items;
+                return items.sort(function (a, b) {
+                    var _a, _b;
+                    var sortA = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__[&quot;getObjectValueByPath&quot;])(a, index);
+                    var sortB = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_6__[&quot;getObjectValueByPath&quot;])(b, index);
+                    if (isDescending) {
+                        _a = __read([sortB, sortA], 2), sortA = _a[0], sortB = _a[1];
+                    }
+                    // Check if both are numbers
+                    if (!isNaN(sortA) &amp;&amp; !isNaN(sortB)) {
+                        return sortA - sortB;
+                    }
+                    // Check if both cannot be evaluated
+                    if (sortA === null &amp;&amp; sortB === null) {
+                        return 0;
+                    }
+                    _b = __read([sortA, sortB].map(function (s) {
+                        return (s || '').toString().toLocaleLowerCase();
+                    }), 2), sortA = _b[0], sortB = _b[1];
+                    if (sortA > sortB) return 1;
+                    if (sortA < sortB) return -1;
+                    return 0;
+                });
+            }" value="" items="" itemkey="_id" pagination="[object Object]" sorticon="$vuetify.icons.sort" headers="[object Object],[object Object],[object Object],[object Object],[object Object]" headertext="text"></v-data-table-stub>
+        <app-delete-dialog-stub></app-delete-dialog-stub>
       </v-card-text-stub>
     </v-card-stub>
   </v-flex-stub>

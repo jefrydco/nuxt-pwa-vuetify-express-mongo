@@ -17,6 +17,7 @@ module.exports = {
     }
   },
   rules: {
+    "no-console": "off",
     "no-param-reassign": "off",
     "import/no-extraneous-dependencies": "off",
     "prettier/prettier": "error"

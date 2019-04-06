@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AppDeleteDialog component renders to match snapshot 1`] = `
-<v-dialog-stub maxwidth="none" origin="center center" width="500" transition="dialog-transition" value="true"><template></template>
+<v-dialog-stub contentclass="" value="true" maxwidth="none" origin="center center" width="500" transition="dialog-transition"><template></template>
   <v-card-stub tag="div">
     <v-card-text-stub>
       <v-container-stub tag="div" fluid="" grid-list-xl="">
@@ -15,10 +15,10 @@ exports[`AppDeleteDialog component renders to match snapshot 1`] = `
     <v-divider-stub></v-divider-stub>
     <v-card-actions-stub>
       <v-spacer-stub></v-spacer-stub>
-      <v-btn-stub activeclass="v-btn--active" outline="true" tag="button" type="button" color="grey" class="btn__delete_dialog--cancel">
+      <v-btn-stub color="grey" activeclass="v-btn--active" tag="button" outline="true" type="button" class="v-btn__custom--cancel-dialog">
         Cancel
       </v-btn-stub>
-      <v-btn-stub activeclass="v-btn--active" tag="button" type="button" color="error" class="btn__delete_dialog--delete">
+      <v-btn-stub color="error" activeclass="v-btn--active" tag="button" type="button" class="v-btn__custom--delete-dialog">
         Delete
       </v-btn-stub>
     </v-card-actions-stub>

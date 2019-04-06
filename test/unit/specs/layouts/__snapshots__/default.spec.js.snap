@@ -6,7 +6,7 @@ exports[`Default layout renders to match snapshot 1`] = `
     <v-container-stub tag="div" fluid="" grid-list-xl="">
       <v-layout-stub tag="div" row="" wrap="">
         <v-flex-stub tag="div" xs12="">
-          <nuxt></nuxt>
+          <div></div>
         </v-flex-stub>
       </v-layout-stub>
     </v-container-stub>
