@@ -57,7 +57,7 @@
     "morgan": "^1.9.1",
     "nuxt": "^2.3.4",
     "nuxt-webfontloader": "^1.0.0",
-    "qs": "^6.6.0",
+    "qs": "^6.7.3",
     "vee-validate": "^2.1.5",
     "vuejs-logger": "^1.5.3",
     "vuetify": "^1.4.2",
